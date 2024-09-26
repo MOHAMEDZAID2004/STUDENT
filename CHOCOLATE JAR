@@ -1,0 +1,11 @@
+def chocolates_for_student_A(N, jars):
+    total_chocolates_A = 0
+    
+    for jar in jars:
+        for i in range(jar):
+            if (i % 3) == 0:  # A picks on turns 0, 3, 6, 9, etc.
+                total_chocolates_A += 1
+    return total_chocolates_A
+N = 3  
+jars = [10, 20, 30]  
+print(chocolates_for_student_A(N, jars)) 
