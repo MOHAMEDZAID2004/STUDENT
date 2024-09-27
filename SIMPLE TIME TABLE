@@ -1,0 +1,42 @@
+timetable = {
+    "Monday": ["DSA", "DBMS", "JAVA ", "OS"],
+    "Tuesday": ["DSA", "MATHS", "java", "AEC"],
+    "Wednesday": ["AEC", "DSA", "MATHS", "OS"],
+    "Thursday": ["JAVA", "ENGLISH", "DBMS", "MATHS"],
+    "Friday": ["DBMS", "DSA", "OS", "ENGLISH"],
+    "SATURDAY": ["OS","MATHS","UHV","NSS"],
+}
+
+
+def display_timetable():
+    print("\nWeekly Timetable:")
+    for day, subjects in timetable.items():
+        print(f"{day}: {', '.join(subjects)}")
+
+
+def display_day_timetable(day):
+    day = day.capitalize()
+    if day in timetable:
+        print(f"\nTimetable for {day}: {', '.join(timetable[day])}")
+    else:
+        print("Invalid day. Please enter a valid day of the week (e.g., Monday).")
+
+
+while True:
+    print("\nSimple Timetable")
+    print("1. Display Weekly Timetable")
+    print("2. Display Timetable for a Specific Day")
+    print("3. Exit")
+
+    choice = input("Enter your choice (1/2/3): ")
+
+    if choice == '1':
+        display_timetable()
+    elif choice == '2':
+        day = input("Enter the day of the week: ")
+        display_day_timetable(day)
+    elif choice == '3':
+        print("Exiting the program.")
+        break
+    else:
+        print("Invalid choice. Please try again.")
